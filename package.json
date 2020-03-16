@@ -1,0 +1,28 @@
+{
+  "name": "apollo-upload",
+  "version": "1.0.0",
+  "description": "Comprehensive guide on how to upload files with apollo-server and mongodb(a few tweaks can make it work for any database)",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon -r esm src/index.js"
+  },
+  "keywords": [
+    "file-uploads",
+    "graphql",
+    "uploads",
+    "apollo",
+    "upload"
+  ],
+  "author": "Divine Hycenth",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "graphql": "^14.6.0",
+    "mongoose": "^5.9.4",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "nodemon": "^2.0.2"
+  }
+}
