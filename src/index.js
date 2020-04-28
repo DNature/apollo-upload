@@ -4,6 +4,7 @@ import resolvers from './resolvers';
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -21,10 +22,13 @@ export default (async function () {
       resolvers,
     });
 
-    const dir = path.join(__dirname, '../images');
-    app.use('/images', express.static(dir));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
 
+    const dir = path.join(process.cwd(), 'images');
     console.log(dir);
+    app.use(express.static(dir));
+    app.use('/images', express.static(dir));
 
     app.use(cors('*'));
     server.applyMiddleware({ app });
