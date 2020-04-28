@@ -2,7 +2,6 @@ import { ApolloServer } from 'apollo-server-express';
 import typeDefs from './typeDefs';
 import resolvers from './resolvers';
 import express from 'express';
-// import bodyParser from 'body-parser';
 import cors from 'cors';
 import path from 'path';
 
@@ -21,8 +20,6 @@ export default (async function () {
       typeDefs,
       resolvers,
     });
-
-    // app.use(bodyParser.json());
 
     const dir = path.join(__dirname, '../images');
     app.use('/images', express.static(dir));
